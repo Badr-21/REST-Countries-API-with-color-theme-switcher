@@ -1,0 +1,51 @@
+.header {
+  font-family: "Nunito Sans", sans-serif;
+  width: 100vw;
+  padding: 1rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -moz-column-gap: 0;
+       column-gap: 0;
+  row-gap: 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.header h1 {
+  color: hsl(200, 15%, 8%);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.header .dark-mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  row-gap: 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.header .dark-mode img {
+  width: 1rem;
+}
+.header .dark-mode p {
+  color: hsl(200, 15%, 8%);
+  font-weight: 600;
+}
+
+.header.dark {
+  background-color: hsl(209, 23%, 22%);
+}
+.header.dark h1 {
+  color: hsl(0, 0%, 100%);
+}
+.header.dark .dark-mode p {
+  color: hsl(0, 0%, 100%);
+}
+
+@media (hover: hover) {
+  .dark-mode {
+    cursor: pointer;
+  }
+}/*# sourceMappingURL=header.css.map */

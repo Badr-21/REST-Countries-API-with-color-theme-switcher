@@ -1,0 +1,98 @@
+@use "../mixins" as *;
+@use "../fonts" as *;
+@use "../colors" as *;
+
+.search-filter {
+   font-family: $font-family;
+   width: 100%;
+   @include flexbox(space-between, flex-start);
+   .search {
+      width: 25rem;
+      padding: 0.8rem 2rem;
+      background-color: $White;
+      border-radius: 0.5rem;
+      @include flexbox(flex-start, center, 1rem);
+      img {
+         width: 1rem;
+      }
+      input {
+         font-family: $font-family;
+         border: none;
+         outline: none;
+      }
+   }
+   .filter {
+      font-weight: $font-600;
+      .by-region {
+         width: 11.8rem;
+         padding: 0.8rem 1rem;
+         border-radius: 0.5rem;
+         background-color: $White;
+         margin-bottom: 0.3rem;
+         position: relative;
+         z-index: 10;
+         @include flexbox(center, center, 3rem);
+         p {
+            font-size: $homepage-items;
+         }
+         img {
+            width: 0.5rem;
+         }
+      }
+      .regions {
+         width: 11.8rem;
+         height: 0;
+         padding: 0rem 1rem;
+         border-radius: 0.5rem;
+         background-color: $White;
+         position: absolute;
+         overflow-y: hidden;
+         transition: padding 0.3s;
+         > p:not(:last-child) {
+            margin-bottom: 0.5rem;
+         }
+      }
+   }
+}
+
+.filter .regions.active {
+   height: auto;
+   padding: 0.8rem 1rem;
+}
+
+.search-filter.dark {
+   .search {
+      background-color: $Dark-Blue;
+      input {
+         background-color: $Dark-Blue;
+         &::placeholder {
+            color: $White;
+         }
+      }
+   }
+   .filter {
+      .by-region {
+         background-color: $Dark-Blue;
+         p {
+            color: $White;
+         }
+      }
+      .regions {
+         background-color: $Dark-Blue;
+         p {
+            color: $White;
+         }
+      }
+   }
+}
+
+@media (hover: hover) {
+   .by-region:hover {
+      cursor: pointer;
+   }
+
+   .regions.active > p:hover {
+      cursor: pointer;
+      opacity: 0.5;
+   }
+}

@@ -1,0 +1,12 @@
+@use "../fonts" as *;
+@use "../colors" as *;
+
+.container {
+   width: 100%;
+   padding: 2.5rem 4rem;
+   background-color: $Very-Light-Gray;
+}
+
+.container.dark {
+   background-color: $Very-Dark-Blue-1;
+}

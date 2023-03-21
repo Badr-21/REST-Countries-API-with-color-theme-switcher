@@ -1,0 +1,43 @@
+@use "../mixins" as *;
+@use "../fonts" as *;
+@use "../colors" as *;
+
+.header {
+   font-family: $font-family;
+   width: 100vw;
+   padding: 1rem 4rem;
+   @include flexbox(space-between, center);
+   h1 {
+      color: $Very-Dark-Blue-2;
+      font-size: 1.5rem;
+      font-weight: $font-800;
+   }
+   .dark-mode {
+      @include flexbox(center, center, 0.5rem);
+      img {
+         width: 1rem;
+      }
+      p {
+         color: $Very-Dark-Blue-2;
+         font-weight: $font-600;
+      }
+   }
+}
+
+.header.dark {
+   background-color: $Dark-Blue;
+   h1 {
+      color: $White;
+   }
+   .dark-mode {
+      p {
+         color: $White;
+      }
+   }
+}
+
+@media (hover: hover) {
+   .dark-mode {
+      cursor: pointer;
+   }
+}
