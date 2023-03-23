@@ -47,4 +47,10 @@
 }
 .display-data.dark .nation .nation-info p {
   color: hsl(0, 0%, 100%);
+}
+
+@media (hover: hover) {
+  .display-data .nation:hover {
+    cursor: pointer;
+  }
 }/*# sourceMappingURL=displayData.css.map */

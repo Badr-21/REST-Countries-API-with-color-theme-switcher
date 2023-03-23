@@ -47,3 +47,11 @@
       }
    }
 }
+
+@media (hover: hover) {
+   .display-data {
+      .nation:hover {
+         cursor: pointer;
+      }
+   }
+}
