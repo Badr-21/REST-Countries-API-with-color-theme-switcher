@@ -2,13 +2,39 @@ import { useEffect, useState, useContext } from "react";
 import data from "../../data.json";
 import "../styles/displayDataStyles/displayData.css";
 import { darkModeContext } from "../App";
-export function DisplayData() {
+export function DisplayData({ query, filteredRegion }) {
    const { darkMode } = useContext(darkModeContext);
    const [dataDisplay, setDataDisplay] = useState();
    useEffect(() => {
-      setDataDisplay(data);
+      let searchedNations;
+      let filteredNations;
+      if (filteredRegion === "All") {
+         if (!query) {
+            setDataDisplay(data);
+         } else {
+            searchedNations = data.filter((nation) => {
+               return nation.name.toLowerCase().includes(query.toLowerCase());
+            });
+            setDataDisplay(searchedNations);
+         }
+      } else {
+         if (!query) {
+            filteredNations = data.filter((nation) => {
+               return nation.region === filteredRegion;
+            });
+            setDataDisplay(filteredNations);
+         } else {
+            filteredNations = data.filter((nation) => {
+               return (
+                  nation.region === filteredRegion &&
+                  nation.name.toLowerCase().includes(query.toLowerCase())
+               );
+            });
+            setDataDisplay(filteredNations);
+         }
+      }
       console.log(data);
-   }, []);
+   }, [query, filteredRegion]);
    return (
       <section className={darkMode ? "display-data dark" : "display-data"}>
          {dataDisplay
