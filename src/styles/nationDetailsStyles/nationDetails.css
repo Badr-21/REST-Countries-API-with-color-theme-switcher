@@ -1,0 +1,132 @@
+.nations-details {
+  font-family: "Nunito Sans", sans-serif;
+  padding: 4rem 3.5rem;
+  background-color: hsl(0, 0%, 98%);
+}
+.nations-details .back {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0.05rem 0.05rem 0.3rem rgba(133, 133, 133, 0.5), -0.05rem -0.05rem 0.3rem rgba(133, 133, 133, 0.5);
+  margin-bottom: 3.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  row-gap: 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.nations-details .back img {
+  width: 1.1rem;
+}
+.nations-details .back p {
+  font-size: 0.875rem;
+  color: hsl(200, 15%, 8%);
+}
+.nations-details .nation-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -moz-column-gap: 0;
+       column-gap: 0;
+  row-gap: 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.nations-details .nation-details img {
+  width: 30rem;
+  height: 23rem;
+}
+.nations-details .nation-details .nation-infos {
+  width: 50%;
+}
+.nations-details .nation-details .nation-infos h2 {
+  color: hsl(200, 15%, 8%);
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+.nations-details .nation-details .nation-infos .nation-infos-text {
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -moz-column-gap: 0;
+       column-gap: 0;
+  row-gap: 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.nations-details .nation-details .nation-infos .nation-infos-text .nation-infos-text-one p,
+.nations-details .nation-details .nation-infos .nation-infos-text .nation-infos-text-two p {
+  margin-bottom: 0.5rem;
+  color: hsl(200, 15%, 8%);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+.nations-details .nation-details .nation-infos .nation-infos-text .nation-infos-text-one p span,
+.nations-details .nation-details .nation-infos .nation-infos-text .nation-infos-text-two p span {
+  font-weight: 300;
+}
+.nations-details .nation-details .nation-infos .nation-borders p {
+  height: 6rem;
+  color: hsl(200, 15%, 8%);
+  font-weight: 600;
+  font-size: 0.875rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  -moz-column-gap: 0;
+       column-gap: 0;
+  row-gap: 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.nations-details .nation-details .nation-infos .nation-borders p div {
+  padding: 0.3rem 1.8rem;
+  margin-left: 0.5rem;
+  background-color: hsl(0, 0%, 100%);
+  text-align: center;
+  box-shadow: 0.05rem 0.05rem 0.3rem rgba(133, 133, 133, 0.5), -0.05rem -0.05rem 0.3rem rgba(133, 133, 133, 0.5);
+}
+
+.nations-details.dark {
+  background-color: hsl(207, 26%, 17%);
+}
+.nations-details.dark .back {
+  background-color: hsl(207, 26%, 17%);
+  box-shadow: 0.05rem 0.05rem 0.3rem hsl(200, 15%, 8%), -0.05rem -0.05rem 0.3rem hsl(200, 15%, 8%);
+}
+.nations-details.dark .back p {
+  color: hsl(0, 0%, 100%);
+}
+.nations-details.dark .nation-details .nation-infos h2 {
+  color: hsl(0, 0%, 100%);
+}
+.nations-details.dark .nation-details .nation-infos .nation-infos-text .nation-infos-text-one p,
+.nations-details.dark .nation-details .nation-infos .nation-infos-text .nation-infos-text-two p {
+  color: hsl(0, 0%, 100%);
+}
+.nations-details.dark .nation-details .nation-infos .nation-infos-text .nation-infos-text-one p span,
+.nations-details.dark .nation-details .nation-infos .nation-infos-text .nation-infos-text-two p span {
+  color: hsl(0, 0%, 98%);
+}
+.nations-details.dark .nation-details .nation-infos .nation-borders p {
+  color: hsl(0, 0%, 100%);
+}
+.nations-details.dark .nation-details .nation-infos .nation-borders p div {
+  background-color: hsl(207, 26%, 17%);
+  box-shadow: 0.05rem 0.05rem 0.3rem hsl(200, 15%, 8%), -0.05rem -0.05rem 0.3rem hsl(200, 15%, 8%);
+}
+
+@media (hover: hover) {
+  .nations-details .back {
+    cursor: pointer;
+  }
+  .nations-details .nation-borders p div:hover {
+    cursor: pointer;
+  }
+}/*# sourceMappingURL=nationDetails.css.map */
