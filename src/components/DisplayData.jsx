@@ -1,10 +1,18 @@
 import { useEffect, useState, useContext } from "react";
 import data from "../../data.json";
 import "../styles/displayDataStyles/displayData.css";
-import { darkModeContext } from "../App";
+import { darkModeContext, nationNameContext } from "../App";
+import { Link } from "react-router-dom";
 export function DisplayData({ query, filteredRegion }) {
    const { darkMode } = useContext(darkModeContext);
    const [dataDisplay, setDataDisplay] = useState();
+   const { setNationName } = useContext(nationNameContext);
+
+   const handleNationName = (e) => {
+      console.log(e.target.textContent);
+      setNationName(e.target.textContent);
+   };
+
    useEffect(() => {
       let searchedNations;
       let filteredNations;
@@ -35,6 +43,7 @@ export function DisplayData({ query, filteredRegion }) {
       }
       console.log(data);
    }, [query, filteredRegion]);
+
    return (
       <section className={darkMode ? "display-data dark" : "display-data"}>
          {dataDisplay
@@ -43,7 +52,11 @@ export function DisplayData({ query, filteredRegion }) {
                     <div key={nation.numericCode} className="nation">
                        <img src={nation.flags.png} alt={`${nation.name} flag`} />
                        <div className="nation-info">
-                          <h2 className="nation-name">{nation.name}</h2>
+                          <Link to={`${nation.name}`} style={{ textDecoration: "none" }}>
+                             <h3 className="nation-name" onClick={handleNationName}>
+                                {nation.name}
+                             </h3>
+                          </Link>
                           <p className="nation-population">
                              Population: <span>{`${nation.population.toLocaleString()}`}</span>
                           </p>
@@ -57,7 +70,7 @@ export function DisplayData({ query, filteredRegion }) {
                     </div>
                  );
               })
-            : "Searching"}
+            : "Searching..."}
       </section>
    );
 }
