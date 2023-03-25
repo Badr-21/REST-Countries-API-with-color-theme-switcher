@@ -9,7 +9,6 @@ export function DisplayData({ query, filteredRegion }) {
    const { setNationName } = useContext(nationNameContext);
 
    const handleNationName = (e) => {
-      console.log(e.target.textContent);
       setNationName(e.target.textContent);
    };
 
@@ -41,7 +40,6 @@ export function DisplayData({ query, filteredRegion }) {
             setDataDisplay(filteredNations);
          }
       }
-      console.log(data);
    }, [query, filteredRegion]);
 
    return (
@@ -52,7 +50,7 @@ export function DisplayData({ query, filteredRegion }) {
                     <div key={nation.numericCode} className="nation">
                        <img src={nation.flags.png} alt={`${nation.name} flag`} />
                        <div className="nation-info">
-                          <Link to={`${nation.name}`} style={{ textDecoration: "none" }}>
+                          <Link to={`/${nation.alpha3Code}`} style={{ textDecoration: "none" }}>
                              <h3 className="nation-name" onClick={handleNationName}>
                                 {nation.name}
                              </h3>
