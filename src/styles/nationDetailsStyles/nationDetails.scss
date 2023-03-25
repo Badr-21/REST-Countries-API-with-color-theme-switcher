@@ -26,7 +26,7 @@
    .nation-details {
       @include flexbox(space-between, center);
       img {
-         width: 30rem;
+         width: 35rem;
          height: 23rem;
       }
       .nation-infos {
@@ -53,15 +53,16 @@
             }
          }
          .nation-borders {
-            p {
+            div {
                height: 6rem;
                color: $Very-Dark-Blue-2;
                font-weight: $font-600;
                font-size: $homepage-items;
                @include flexbox(flex-start, center, 0, 0, row, wrap);
                div {
+                  height: fit-content;
                   padding: 0.3rem 1.8rem;
-                  margin-left: 0.5rem;
+                  margin: 0.5rem 0.5rem;
                   background-color: $White;
                   text-align: center;
                   box-shadow: 0.05rem 0.05rem 0.3rem rgba(133, 133, 133, 0.5),
@@ -100,7 +101,7 @@
             }
          }
          .nation-borders {
-            p {
+            div {
                color: $White;
                div {
                   background-color: $Very-Dark-Blue-1;
@@ -119,8 +120,9 @@
          cursor: pointer;
       }
       .nation-borders {
-         p div:hover {
+         div div:hover {
             cursor: pointer;
+            opacity: 0.5;
          }
       }
    }

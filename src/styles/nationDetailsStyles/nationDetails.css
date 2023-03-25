@@ -38,7 +38,7 @@
   flex-wrap: nowrap;
 }
 .nations-details .nation-details img {
-  width: 30rem;
+  width: 35rem;
   height: 23rem;
 }
 .nations-details .nation-details .nation-infos {
@@ -71,7 +71,7 @@
 .nations-details .nation-details .nation-infos .nation-infos-text .nation-infos-text-two p span {
   font-weight: 300;
 }
-.nations-details .nation-details .nation-infos .nation-borders p {
+.nations-details .nation-details .nation-infos .nation-borders div {
   height: 6rem;
   color: hsl(200, 15%, 8%);
   font-weight: 600;
@@ -85,9 +85,11 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
-.nations-details .nation-details .nation-infos .nation-borders p div {
+.nations-details .nation-details .nation-infos .nation-borders div div {
+  height: -moz-fit-content;
+  height: fit-content;
   padding: 0.3rem 1.8rem;
-  margin-left: 0.5rem;
+  margin: 0.5rem 0.5rem;
   background-color: hsl(0, 0%, 100%);
   text-align: center;
   box-shadow: 0.05rem 0.05rem 0.3rem rgba(133, 133, 133, 0.5), -0.05rem -0.05rem 0.3rem rgba(133, 133, 133, 0.5);
@@ -114,10 +116,10 @@
 .nations-details.dark .nation-details .nation-infos .nation-infos-text .nation-infos-text-two p span {
   color: hsl(0, 0%, 98%);
 }
-.nations-details.dark .nation-details .nation-infos .nation-borders p {
+.nations-details.dark .nation-details .nation-infos .nation-borders div {
   color: hsl(0, 0%, 100%);
 }
-.nations-details.dark .nation-details .nation-infos .nation-borders p div {
+.nations-details.dark .nation-details .nation-infos .nation-borders div div {
   background-color: hsl(207, 26%, 17%);
   box-shadow: 0.05rem 0.05rem 0.3rem hsl(200, 15%, 8%), -0.05rem -0.05rem 0.3rem hsl(200, 15%, 8%);
 }
@@ -126,7 +128,8 @@
   .nations-details .back {
     cursor: pointer;
   }
-  .nations-details .nation-borders p div:hover {
+  .nations-details .nation-borders div div:hover {
     cursor: pointer;
+    opacity: 0.5;
   }
 }/*# sourceMappingURL=nationDetails.css.map */

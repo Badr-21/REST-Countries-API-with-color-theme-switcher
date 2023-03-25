@@ -51,8 +51,9 @@
 
 @media (hover: hover) {
    .display-data {
-      .nation img:hover {
+      .nation .nation-info h3:hover {
          cursor: pointer;
+         opacity: 0.5;
       }
    }
 }
