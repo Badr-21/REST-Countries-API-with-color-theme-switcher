@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/nationDetailsStyles/nationDetails.css";
 import arrowLeftIcon from "../assets/arrow-left.svg";
 import arrowLeftDarkModeIcon from "../assets/arrow-left-dark.svg";
@@ -8,8 +8,11 @@ import data from "../../data.json";
 
 export function Nation() {
    const { darkMode } = useContext(darkModeContext);
-   const { nationName } = useContext(nationNameContext);
+   const { nationName, setNationName } = useContext(nationNameContext);
    const [nationDetails, setNationDetails] = useState();
+   const [alpha3Code, setAlpha3Code] = useState("");
+
+   const navigate = useNavigate();
 
    useEffect(() => {
       let nationClicked;
@@ -17,10 +20,23 @@ export function Nation() {
          nationClicked = data.filter((nation) => {
             return nation.name === nationName;
          });
-         console.log(nationClicked);
          setNationDetails(...nationClicked);
       }
    }, [nationName]);
+
+   const handleBordersNation = (e) => {
+      setAlpha3Code(e.target.textContent.trim());
+   };
+
+   useEffect(() => {
+      let nationBordersClicked;
+      if (alpha3Code) {
+         nationBordersClicked = data.filter((nation) => {
+            return nation.alpha3Code === alpha3Code;
+         });
+         setNationDetails(...nationBordersClicked);
+      }
+   }, [alpha3Code]);
 
    return (
       <section className={darkMode ? "nations-details dark" : "nations-details"}>
@@ -30,7 +46,7 @@ export function Nation() {
          </Link>
          {nationDetails ? (
             <article className="nation-details">
-               <img src={nationDetails.flags.png} alt={`${nationDetails.name} flag`} />
+               <img src={nationDetails.flags.svg} alt={`${nationDetails.name} flag`} />
                <div className="nation-infos">
                   <h2>{nationDetails.name}</h2>
                   <div className="nation-infos-text">
@@ -68,12 +84,20 @@ export function Nation() {
                   </div>
                   <div className="nation-borders">
                      {nationDetails.borders ? (
-                        <p>
+                        <div>
                            Border Countries:
                            {nationDetails.borders.map((country) => {
-                              return <div> {country} </div>;
+                              return (
+                                 <Link
+                                    key={country}
+                                    to={`/${country}`}
+                                    style={{ textDecoration: "none" }}
+                                 >
+                                    <div onClick={handleBordersNation}> {country} </div>
+                                 </Link>
+                              );
                            })}
-                        </p>
+                        </div>
                      ) : null}
                   </div>
                </div>
