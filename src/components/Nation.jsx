@@ -83,9 +83,10 @@ export function Nation() {
                      </div>
                   </div>
                   <div className="nation-borders">
+                     <p>Border Countries:</p>
+
                      {nationDetails.borders ? (
                         <div>
-                           Border Countries:
                            {nationDetails.borders.map((country) => {
                               return (
                                  <Link
@@ -98,7 +99,9 @@ export function Nation() {
                               );
                            })}
                         </div>
-                     ) : null}
+                     ) : (
+                        "No borders"
+                     )}
                   </div>
                </div>
             </article>
