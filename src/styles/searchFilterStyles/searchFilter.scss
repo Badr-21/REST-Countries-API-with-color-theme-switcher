@@ -99,3 +99,9 @@
       opacity: 0.5;
    }
 }
+
+@media (max-width: 750px) {
+   .search-filter {
+      @include flexbox(flex-start, flex-start, 0, 2rem, column);
+   }
+}

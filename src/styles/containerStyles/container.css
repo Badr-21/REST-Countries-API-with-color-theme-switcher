@@ -6,4 +6,10 @@
 
 .container.dark {
   background-color: hsl(207, 26%, 17%);
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 2.5rem 1rem;
+  }
 }/*# sourceMappingURL=container.css.map */

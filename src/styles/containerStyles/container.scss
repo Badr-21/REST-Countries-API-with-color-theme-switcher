@@ -10,3 +10,9 @@
 .container.dark {
    background-color: $Very-Dark-Blue-1;
 }
+
+@media (max-width: 500px) {
+   .container {
+      padding: 2.5rem 1rem;
+   }
+}

@@ -113,4 +113,16 @@
     cursor: pointer;
     opacity: 0.5;
   }
+}
+@media (max-width: 750px) {
+  .search-filter {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    -moz-column-gap: 0;
+         column-gap: 0;
+    row-gap: 2rem;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
 }/*# sourceMappingURL=searchFilter.css.map */

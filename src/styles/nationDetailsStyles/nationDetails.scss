@@ -9,11 +9,11 @@
    .back {
       width: fit-content;
       padding: 0.5rem 2rem;
-      border-radius: 0.5rem;
+      border-radius: 0.3rem;
       background-color: $White;
       box-shadow: 0.05rem 0.05rem 0.3rem rgba(133, 133, 133, 0.5),
          -0.05rem -0.05rem 0.3rem rgba(133, 133, 133, 0.5);
-      margin-bottom: 3.5rem;
+      margin-bottom: 2rem;
       @include flexbox(flex-start, center, 0.5rem);
       img {
          width: 1.1rem;
@@ -27,7 +27,7 @@
       @include flexbox(space-between, center);
       img {
          width: 35rem;
-         height: 23rem;
+         height: 25rem;
       }
       .nation-infos {
          width: 50%;
@@ -53,8 +53,13 @@
             }
          }
          .nation-borders {
+            p {
+               color: $Very-Dark-Blue-2;
+               font-weight: $font-600;
+               font-size: $homepage-items;
+               margin-bottom: 1rem;
+            }
             div {
-               height: 6rem;
                color: $Very-Dark-Blue-2;
                font-weight: $font-600;
                font-size: $homepage-items;
@@ -123,6 +128,59 @@
          div div:hover {
             cursor: pointer;
             opacity: 0.5;
+         }
+      }
+   }
+}
+
+@media (max-width: 1115px) {
+   .nations-details {
+      padding: 3rem 3.5rem;
+      .back {
+         margin-bottom: 5rem;
+      }
+      .nation-details {
+         @include flexbox(flex-start, center, 0, 2rem, column);
+         img {
+            width: 30rem;
+            height: 20rem;
+         }
+         .nation-infos {
+            .nation-infos-text {
+               margin-bottom: 2rem;
+            }
+         }
+      }
+   }
+}
+
+@media (max-width: 800px) {
+   .nations-details {
+      .nation-details {
+         @include flexbox(flex-start, flex-start, 0, 2rem, column);
+         .nation-infos {
+            width: 100%;
+            .nation-infos-text {
+               @include flexbox(flex-start, flex-start, 0, 2rem, column);
+            }
+            .nation-borders {
+               div {
+                  height: auto;
+                  @include flexbox(flex-start, flex-start, 0, 0, row, wrap);
+               }
+            }
+         }
+      }
+   }
+}
+
+@media (max-width: 600px) {
+   .nations-details {
+      padding: 3rem 2rem;
+      .nation-details {
+         @include flexbox(flex-start, center, 0, 2rem, column);
+         img {
+            width: 100%;
          }
       }
    }

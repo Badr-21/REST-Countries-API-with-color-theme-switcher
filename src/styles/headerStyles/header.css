@@ -1,7 +1,7 @@
 .header {
   font-family: "Nunito Sans", sans-serif;
   width: 100vw;
-  padding: 1rem 4rem;
+  padding: 1rem 5rem 1rem 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,5 +47,21 @@
 @media (hover: hover) {
   .dark-mode {
     cursor: pointer;
+  }
+}
+@media (max-width: 500px) {
+  .header {
+    padding: 1rem 2rem 1rem 1rem;
+  }
+}
+@media (max-width: 400px) {
+  .header h1 {
+    font-size: 1rem;
+  }
+  .header .dark-mode img {
+    width: 0.8rem;
+  }
+  .header .dark-mode p {
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=header.css.map */

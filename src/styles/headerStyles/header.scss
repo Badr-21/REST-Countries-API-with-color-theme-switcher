@@ -5,7 +5,7 @@
 .header {
    font-family: $font-family;
    width: 100vw;
-   padding: 1rem 4rem;
+   padding: 1rem 5rem 1rem 4rem;
    @include flexbox(space-between, center);
    h1 {
       color: $Very-Dark-Blue-2;
@@ -39,5 +39,27 @@
 @media (hover: hover) {
    .dark-mode {
       cursor: pointer;
+   }
+}
+
+@media (max-width: 500px) {
+   .header {
+      padding: 1rem 2rem 1rem 1rem;
+   }
+}
+
+@media (max-width: 400px) {
+   .header {
+      h1 {
+         font-size: 1rem;
+      }
+      .dark-mode {
+         img {
+            width: 0.8rem;
+         }
+         p {
+            font-size: 1rem;
+         }
+      }
    }
 }
